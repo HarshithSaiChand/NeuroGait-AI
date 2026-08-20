@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Data Charts{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">
+            <i class="fas fa-chart-bar me-3"></i>Dataset Analysis Charts
+        </h1>
+        <p class="lead text-muted">Visual exploration of the PhysioNet Gait Database</p>
+    </div>
+    
+    <div class="row g-4">
+        <!-- Chart 1 -->
+        <div class="col-md-6">
+            <div class="card shadow-lg h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Patient Distribution</h5>
+                    <img src="{{ url_for('static', filename='images/chart1_distribution.png') }}" 
+                         class="img-fluid rounded" alt="Patient Distribution">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chart 2 -->
+        <div class="col-md-6">
+            <div class="card shadow-lg h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Gait Speed vs Age</h5>
+                    <img src="{{ url_for('static', filename='images/chart2_gait_speed_scatter.png') }}" 
+                         class="img-fluid rounded" alt="Gait Speed Analysis">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chart 3 -->
+        <div class="col-md-6">
+            <div class="card shadow-lg h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Feature Correlation</h5>
+                    <img src="{{ url_for('static', filename='images/chart3_correlation_heatmap.png') }}" 
+                         class="img-fluid rounded" alt="Feature Correlation">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chart 4 -->
+        <div class="col-md-6">
+            <div class="card shadow-lg h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Feature Relationships</h5>
+                    <img src="{{ url_for('static', filename='images/chart4_pair_plot.png') }}" 
+                         class="img-fluid rounded" alt="Pair Plot">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

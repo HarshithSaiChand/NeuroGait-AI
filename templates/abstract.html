@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Abstract{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg">
+                <div class="card-body p-5">
+                    <h1 class="text-center mb-4">
+                        <i class="fas fa-file-alt me-2 text-primary"></i>Project Abstract
+                    </h1>
+                    
+                    <div class="abstract-content">
+                        <p class="lead">
+                            Neurodegenerative diseases such as Amyotrophic Lateral Sclerosis (ALS), Parkinson's Disease (PD), and Huntington's Disease (HD) significantly impair motor function, making early detection crucial for timely intervention and improved patient outcomes.
+                        </p>
+                        
+                        <p>
+                            In this study, we propose an optimized <strong>Stacking Ensemble machine learning model</strong> aimed at accurately classifying neurodegenerative diseases based on raw gait time-series data. Our research utilizes the PhysioNet Gait in Neurodegenerative Disease Database, comprising <strong>15,160 individual strides from 64 unique patients</strong>.
+                        </p>
+                        
+                        <p>
+                            Unlike previous approaches that suffer from <strong>data leakage</strong> by evaluating at the stride level, our methodology aggregates data to the <strong>patient level</strong>, calculating statistical metrics like Mean, Standard Deviation, and Coefficient of Variation (CV). We introduce novel engineered features, including a <strong>"Severity-Speed Ratio,"</strong> to distinguish between clinically similar diseases.
+                        </p>
+                        
+                        <p>
+                            Our Stacking Ensemble, combining <strong>Random Forest, XGBoost, and Gradient Boosting</strong> with balanced class weights, demonstrated a substantial accuracy increase. Validated using rigorous <strong>5-Fold Stratified Cross-Validation</strong>, the model achieved a fair accuracy of <strong>81.15%</strong>, successfully surpassing the baseline OPTIC paper's accuracy of 78.98% while eliminating class bias.
+                        </p>
+                        
+                        <p>
+                            This study underscores the importance of <strong>patient-level aggregation</strong> and <strong>feature engineering</strong>, positioning our model as a robust, unbiased predictive tool for clinical gait analysis and early neurological screening.
+                        </p>
+                        
+                        <h4 class="mt-5 mb-3">Key Contributions:</h4>
+                        <ul>
+                            <li><strong>Eliminated Data Leakage:</strong> Patient-level aggregation instead of stride-level evaluation</li>
+                            <li><strong>Novel Feature Engineering:</strong> Severity-Speed Ratio and asymmetry metrics</li>
+                            <li><strong>Balanced Predictions:</strong> Equal attention to all disease classes</li>
+                            <li><strong>Superior Performance:</strong> 81.15% accuracy vs 78.98% baseline</li>
+                            <li><strong>Clinical Applicability:</strong> Web-based deployment for real-world use</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

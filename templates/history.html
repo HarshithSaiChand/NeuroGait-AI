@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">
+        <i class="fas fa-history me-2 text-primary"></i>Prediction History
+    </h1>
+    
+    <div class="card shadow">
+        <div class="card-body">
+            {% if predictions %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Predicted Disease</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pred in predictions %}
+                        <tr>
+                            <td>{{ pred.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                            <td><span class="badge bg-primary">{{pred.predicted_disease }}</span></td>
+                            <td>{{ "%.2f"|format(pred.confidence) }}%</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="text-center text-muted">No predictions yet. <a href="{{ url_for('predict') }}">Make your first prediction!</a></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

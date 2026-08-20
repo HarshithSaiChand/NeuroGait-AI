@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Performance{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">
+            <i class="fas fa-trophy me-3"></i>Algorithm Performance Metrics
+        </h1>
+        <p class="lead text-muted">Comprehensive evaluation of our Stacking Ensemble model</p>
+    </div>
+    
+    <div class="row g-4">
+        <!-- Perf 1 -->
+        <div class="col-md-6">
+            <div class="card shadow-lg h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Confusion Matrix</h5>
+                    <img src="{{ url_for('static', filename='images/perf1_confusion_matrix.png') }}" 
+                         class="img-fluid rounded" alt="Confusion Matrix">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Perf 2 -->
+        <div class="col-md-6">
+            <div class="card shadow-lg h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Accuracy Comparison</h5>
+                    <img src="{{ url_for('static', filename='images/perf2_accuracy_comparison.png') }}" 
+                         class="img-fluid rounded" alt="Accuracy Comparison">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Perf 3 -->
+        <div class="col-md-6">
+            <div class="card shadow-lg h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Cross Validation</h5>
+                    <img src="{{ url_for('static', filename='images/perf3_cross_validation.png') }}" 
+                         class="img-fluid rounded" alt="Cross Validation">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Perf 4 -->
+        <div class="col-md-6">
+            <div class="card shadow-lg h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Feature Importance</h5>
+                    <img src="{{ url_for('static', filename='images/perf4_feature_importance.png') }}" 
+                         class="img-fluid rounded" alt="Feature Importance">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Predict{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg">
+                <div class="card-body p-5">
+                    <h1 class="text-center mb-4">
+                        <i class="fas fa-stethoscope me-2 text-primary"></i>Patient Gait Input
+                    </h1>
+                    <p class="text-center text-muted mb-5">Enter patient gait metrics for disease prediction</p>
+                    
+                    <form method="POST" action="{{ url_for('predict') }}">
+                        <div class="row">
+                            {% for feature in features %}
+                            <div class="col-md-4 mb-3">
+                                <label for="{{ feature }}" class="form-label">
+                                    {{ feature.replace('_', ' ').title() }}
+                                </label>
+                                <input type="number" 
+                                       step="any" 
+                                       class="form-control" 
+                                       id="{{ feature }}" 
+                                       name="{{ feature }}" 
+                                       placeholder="0.00" 
+                                       required>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-brain me-2"></i>Run AI Prediction
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="alert alert-info mt-4" role="alert">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Note:</strong> Enter the aggregated statistical features (Mean, Std, CV) for each gait parameter. 
+                        Use the <a href="{{ url_for('charts') }}">Data Charts</a> page to understand the data distribution.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all inputs inside the prediction form
+    const inputs = document.querySelectorAll('form input[type="number"]');
+
+    if (inputs.length === 0) return;
+
+    // Listen for paste event on the FIRST input field
+    inputs[0].addEventListener('paste', function (e) {
+        // Get data from clipboard
+        const clipboardData = (e.clipboardData || window.clipboardData).getData('text');
+        
+        // Clean up the text: replace commas or tabs with a single space, and remove line breaks
+        const cleanText = clipboardData.replace(/[\r\n\t,]+/g, ' ').trim();
+        
+        // Split by one or more spaces to get individual numbers
+        const values = cleanText.split(/\s+/);
+
+        // If it looks like a row of multiple items, handle pasting across fields
+        if (values.length > 1) {
+            e.preventDefault(); // Stop normal single-box paste
+
+            values.forEach((value, index) => {
+                if (index < inputs.length) {
+                    inputs[index].value = value;
+                    inputs[index].dispatchEvent(new Event('input', { bubbles: true }));
+                }
+            });
+        }
+    });
+});
+</script>
+{% endblock %}
+
