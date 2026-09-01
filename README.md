@@ -41,7 +41,7 @@ cd NeuroGait-AI
 ```
 
 <p align="center">
-  <video src="https://github.com/HarshithSaiChand/NeuroGait-AI/raw/refs/heads/main/setup.mp4" width="100%" controls="controls"></video>
+  [![Watch Setup Video](https://shields.io▶-blue?style=for-the-badge&logo=playstation)]((https://github.com/HarshithSaiChand/NeuroGait-AI/raw/refs/heads/main/setup.mp4))
 </p>
 
 
