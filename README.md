@@ -41,7 +41,7 @@ cd NeuroGait-AI
 ```
 
 <p align="center">
-  <video src="https://github.com/HarshithSaiChand/NeuroGait-AI/raw/refs/heads/main/setup.mp4" width="100%" controls></video>
+  <video src="https://github.com" width="100%" controls="controls"></video>
 </p>
 
 
