@@ -42,7 +42,7 @@ cd NeuroGait-AI
 
 
 <p align="center">
-  ▶️ <b><a href="https://github.com/HarshithSaiChand/NeuroGait-AI/raw/refs/heads/main/setup.mp4" target="_blank">CLICK HERE TO WATCH THE SETUP DEMO VIDEO</a></b> ▶️
+  ▶️ <b><a href="https://github.com/HarshithSaiChand/NeuroGait-AI/blob/main/setup.mp4" target="_blank">CLICK HERE TO WATCH THE SETUP DEMO VIDEO</a></b> ▶️
 </p>
 
 
