@@ -40,12 +40,12 @@ git clone https://github.com/HarshithSaiChand/NeuroGait-AI.git
 cd NeuroGait-AI
 ```
 
+
 <p align="center">
   <a href="https://github.com/HarshithSaiChand/NeuroGait-AI/raw/refs/heads/main/setup.mp4">
-    <img src="https://shields.io▶-blue?style=for-the-badge" alt="Watch Setup Video">
+    <img src="https://shields.io" alt="Watch Setup Video">
   </a>
 </p>
-
 
 
 ### Step 2: Create a Virtual Environment (Recommended)
