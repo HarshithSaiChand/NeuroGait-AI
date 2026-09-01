@@ -40,6 +40,11 @@ git clone https://github.com/HarshithSaiChand/NeuroGait-AI.git
 cd NeuroGait-AI
 ```
 
+<p align="center">
+  <video src="./setup.mp4" width="100%" controls></video>
+</p>
+
+
 ### Step 2: Create a Virtual Environment (Recommended)
 
 It is best practice to run the project in an isolated environment to avoid dependency conflicts.
